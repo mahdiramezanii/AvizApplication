@@ -1,4 +1,5 @@
 import 'package:aviz_application/constant/colors.dart';
+import 'package:aviz_application/screan/login_screan.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -35,7 +36,6 @@ class WelcomScrean extends StatelessWidget {
                   spacing: 3), // your preferred effect
             ),
             const Spacer(),
-            
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -51,7 +51,12 @@ class WelcomScrean extends StatelessWidget {
                       ),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (BuildContext context) {
+                      return LoginScrean();
+                    }));
+                  },
                   child: Text(
                     "ورود",
                     style: TextStyle(
