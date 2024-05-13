@@ -1,4 +1,5 @@
 import 'package:aviz_application/constant/colors.dart';
+import 'package:aviz_application/screan/confirm_mobile_screan.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -32,11 +33,11 @@ class LoginScrean extends StatelessWidget {
             const SizedBox(
               height: 15,
             ),
-            const Text(
+             Text(
               textDirection: TextDirection.rtl,
               "خوشحالیم که مجددا آویز رو برای آگهی انتخاب کردی!",
               style: TextStyle(
-                color: Color.fromRGBO(152, 162, 179, 1),
+                color: MyColors.grey500,
                 fontFamily: "sm",
               ),
             ),
@@ -77,7 +78,14 @@ class LoginScrean extends StatelessWidget {
                   borderRadius: BorderRadius.circular(4),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context){
+                    return ConfirmMobileScrean();
+                  }
+                  )
+                );
+              },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
