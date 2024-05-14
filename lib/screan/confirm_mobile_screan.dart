@@ -93,11 +93,9 @@ class ConfirmMobileScrean extends StatelessWidget {
                 const SizedBox(
                   width: 5,
                 ),
-                Text(
-                "${Timer(const Duration(seconds: 5),() async {
-                  
-                },)}",
-                  style: const TextStyle(
+                const Text(
+                "00:45",
+                  style:  TextStyle(
                     color: Colors.black,
                     fontFamily: "sb",
                     fontSize: 16,
