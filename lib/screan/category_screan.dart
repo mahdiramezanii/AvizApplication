@@ -41,11 +41,7 @@ class CategoryScrean extends StatelessWidget {
           const SizedBox(
             width: double.infinity,
           ),
-          Container(
-            color: MyColors.red3,
-            height: 5,
-            width: 40,
-          ),
+          ProgressBar(),
           const SizedBox(
             height: 40,
           ),
@@ -78,6 +74,21 @@ class CategoryScrean extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class ProgressBar extends StatelessWidget {
+  const ProgressBar({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: MyColors.red3,
+      height: 5,
+      width: 40,
     );
   }
 }
