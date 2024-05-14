@@ -1,3 +1,4 @@
+import 'package:aviz_application/screan/category_screan.dart';
 import 'package:aviz_application/screan/home_screan.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
-      home: HomeScrean()
+      home: CategoryScrean(),
     );
   }
 }
