@@ -1,5 +1,3 @@
-import 'dart:async';
-import 'dart:ffi';
 
 import 'package:aviz_application/constant/colors.dart';
 import 'package:flutter/material.dart';
@@ -20,13 +18,14 @@ class ConfirmMobileScrean extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const SizedBox(
               height: 70,
               width: double.infinity,
             ),
             const Text(
-              "شماره موبایل",
+              "تایید شماره موبایل" ,
               style: TextStyle(
                 color: Colors.black,
                 fontFamily: "sb",
@@ -48,33 +47,30 @@ class ConfirmMobileScrean extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            Directionality(
-              textDirection: TextDirection.rtl,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  InputNumberTextField(
-                    focus: true,
-                    textController: _tController1,
-                    number: 1,
-                  ),
-                  InputNumberTextField(
-                    focus: false,
-                    textController: _tController2,
-                    number: 2,
-                  ),
-                  InputNumberTextField(
-                    focus: false,
-                    textController: _tController3,
-                    number: 3,
-                  ),
-                  InputNumberTextField(
-                    focus: false,
-                    textController: _tController4,
-                    number: 4,
-                  ),
-                ],
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                InputNumberTextField(
+                  focus: true,
+                  textController: _tController1,
+                  number: 1,
+                ),
+                InputNumberTextField(
+                  focus: false,
+                  textController: _tController2,
+                  number: 2,
+                ),
+                InputNumberTextField(
+                  focus: false,
+                  textController: _tController3,
+                  number: 3,
+                ),
+                InputNumberTextField(
+                  focus: false,
+                  textController: _tController4,
+                  number: 4,
+                ),
+              ],
             ),
             const SizedBox(
               height: 30,
@@ -94,23 +90,45 @@ class ConfirmMobileScrean extends StatelessWidget {
                   width: 5,
                 ),
                 const Text(
-                "00:45",
-                  style:  TextStyle(
+                  "00:45",
+                  style: TextStyle(
                     color: Colors.black,
                     fontFamily: "sb",
                     fontSize: 16,
                   ),
-                )
+                ),
               ],
-            )
+            ),
+            const Spacer(),
+            Center(
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  maximumSize:const Size(400,80),
+                  minimumSize: const Size(350,40),
+
+                  backgroundColor: MyColors.red3,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4)
+                  )
+
+                ),
+                onPressed: () {},
+                child: const Text(
+                  "تایید ورود",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: "sb",
+                    fontSize: 16,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 16,)
           ],
         ),
       ),
     );
   }
-
-
-
 }
 
 class InputNumberTextField extends StatelessWidget {
