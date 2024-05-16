@@ -33,7 +33,7 @@ PreferredSizeWidget AvizAppBar({required String title}) {
                 "$title",
                 style: TextStyle(
                   fontFamily: "sb",
-                  color: MyColors.red3,
+                  color: MyColors.PrimaryBase,
                   fontSize: 20,
                 ),
               ),

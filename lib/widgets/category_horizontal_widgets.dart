@@ -34,7 +34,7 @@ class _SwitchCategoryHorizontalState extends State<SwitchCategoryHorizontal> {
             Switch(
               value: widget.switichValue,
               activeColor: MyColors.greyBase,
-              activeTrackColor: MyColors.red3,
+              activeTrackColor: MyColors.PrimaryBase,
               inactiveTrackColor: MyColors.grey400,
               splashRadius: 0,
               inactiveThumbColor: Colors.white,

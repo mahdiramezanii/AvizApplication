@@ -64,7 +64,7 @@ class LoginScrean extends StatelessWidget {
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(4),
                     borderSide: BorderSide(
-                      color: MyColors.red3,
+                      color: MyColors.PrimaryBase,
                     ),
                   ),
                 ),
@@ -73,7 +73,7 @@ class LoginScrean extends StatelessWidget {
             const Spacer(),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: MyColors.red3,
+                backgroundColor: MyColors.PrimaryBase,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(4),
                 ),
@@ -114,7 +114,7 @@ class LoginScrean extends StatelessWidget {
                 Text(
                   "ثبت نام",
                   style: TextStyle(
-                    color: MyColors.red3,
+                    color: MyColors.PrimaryBase,
                     fontSize: 14,
                     fontFamily: "sm",
                   ),

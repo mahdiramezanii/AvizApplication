@@ -63,7 +63,7 @@ class RegisterScrean extends StatelessWidget {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(4),
-                      borderSide: BorderSide(color: MyColors.red3),
+                      borderSide: BorderSide(color: MyColors.PrimaryBase),
                     )),
               ),
             ),
@@ -88,14 +88,14 @@ class RegisterScrean extends StatelessWidget {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(4),
-                      borderSide: BorderSide(color: MyColors.red3),
+                      borderSide: BorderSide(color: MyColors.PrimaryBase),
                     )),
               ),
             ),
             const Spacer(),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  backgroundColor: MyColors.red3,
+                  backgroundColor: MyColors.PrimaryBase,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(4))),
               onPressed: () {},
@@ -123,7 +123,7 @@ class RegisterScrean extends StatelessWidget {
                 Text(
                   "ورود",
                   style: TextStyle(
-                    color: MyColors.red3,
+                    color: MyColors.PrimaryBase,
                     fontFamily: "sm",
                     fontSize: 14,
                   ),

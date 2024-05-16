@@ -1,4 +1,5 @@
 import 'package:aviz_application/constant/colors.dart';
+import 'package:aviz_application/screan/detail_aviz_screan.dart';
 import 'package:aviz_application/widgets/app_bar.dart';
 import 'package:aviz_application/widgets/category_horizontal_widgets.dart';
 import 'package:aviz_application/widgets/horizontal_row_title.dart';
@@ -49,7 +50,7 @@ class DetailRegisterAvizScrean extends StatelessWidget {
                         ),
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: MyColors.red3,
+                              backgroundColor: MyColors.PrimaryBase,
                               maximumSize: const Size(200, 40),
                               minimumSize: const Size(150, 40)),
                           onPressed: () {},
@@ -116,7 +117,7 @@ class DetailRegisterAvizScrean extends StatelessWidget {
                       borderRadius: BorderRadius.circular(4),
                       borderSide: BorderSide(
                         width: 1,
-                        color: MyColors.red3,
+                        color: MyColors.PrimaryBase,
                       ),
                     ),
                     fillColor: MyColors.grey100,
@@ -163,7 +164,7 @@ class DetailRegisterAvizScrean extends StatelessWidget {
                       borderRadius: BorderRadius.circular(4),
                       borderSide: BorderSide(
                         width: 1,
-                        color: MyColors.red3,
+                        color: MyColors.PrimaryBase,
                       ),
                     ),
                     fillColor: MyColors.grey100,
@@ -196,7 +197,7 @@ class DetailRegisterAvizScrean extends StatelessWidget {
             sliver: SliverToBoxAdapter(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: MyColors.red3,
+                  backgroundColor: MyColors.PrimaryBase,
                   // maximumSize: Size(400, 100),
                   minimumSize: const Size(343, 40),
                   shape: RoundedRectangleBorder(
@@ -204,11 +205,13 @@ class DetailRegisterAvizScrean extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  // Navigator.of(context)
-                  //     .push(MaterialPageRoute(builder: (context) {
-                  //   return LocationAvizScrean();
-
-                  // }));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return DetailAvizScrean();
+                      },
+                    ),
+                  );
                 },
                 child: Text(
                   "ثبت آکهی",

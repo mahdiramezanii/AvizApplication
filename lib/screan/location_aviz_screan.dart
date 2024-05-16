@@ -60,7 +60,7 @@ class LocationAvizScrean extends StatelessWidget {
             const Spacer(),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: MyColors.red3,
+                backgroundColor: MyColors.PrimaryBase,
                 // maximumSize: Size(400, 100),
                 minimumSize: const Size(343, 40),
                 shape: RoundedRectangleBorder(
