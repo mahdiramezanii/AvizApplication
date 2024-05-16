@@ -10,9 +10,13 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
+      theme: ThemeData().copyWith(
+        colorScheme: Theme.of(context).colorScheme.copyWith(
+              outline: Colors.transparent,
+            ),
+      ),
       home: RegisterAvizScrean(),
-      
     );
   }
 }

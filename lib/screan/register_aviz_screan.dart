@@ -1,17 +1,25 @@
 import 'package:aviz_application/constant/colors.dart';
 import 'package:aviz_application/screan/category_screan.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-class RegisterAvizScrean extends StatelessWidget {
+class RegisterAvizScrean extends StatefulWidget {
+  @override
+  State<RegisterAvizScrean> createState() => _RegisterAvizScreanState();
+}
+
+class _RegisterAvizScreanState extends State<RegisterAvizScrean> {
+  bool switichValue = false;
+
   @override
   Widget build(BuildContext context) {
+    final ValueChanged<bool>? onChanged;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-      
         backgroundColor: MyColors.greyBase,
         automaticallyImplyLeading: false,
-        surfaceTintColor:MyColors.greyBase ,
+        surfaceTintColor: MyColors.greyBase,
         actions: [
           Expanded(
             child: Padding(
@@ -28,6 +36,7 @@ class RegisterAvizScrean extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: "sb",
                       color: MyColors.red3,
+                      fontSize: 20,
                     ),
                   ),
                   const Image(
@@ -42,7 +51,10 @@ class RegisterAvizScrean extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           const SliverPadding(
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+            padding: EdgeInsets.symmetric(
+              vertical: 10,
+              horizontal: 30,
+            ),
             sliver: SliverToBoxAdapter(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -64,7 +76,10 @@ class RegisterAvizScrean extends StatelessWidget {
             ),
           ),
           SliverPadding(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+            padding: const EdgeInsets.symmetric(
+              vertical: 10,
+              horizontal: 30,
+            ),
             sliver: SliverToBoxAdapter(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -192,12 +207,6 @@ class RegisterAvizScrean extends StatelessWidget {
                   PropertiyItemWidget(),
                   PropertiyItemWidget(),
                   PropertiyItemWidget(),
-                  PropertiyItemWidget(),
-                  PropertiyItemWidget(),
-                  PropertiyItemWidget(),
-                  PropertiyItemWidget(),
-                  PropertiyItemWidget(),
-                  PropertiyItemWidget(),
                 ],
               ),
             ),
@@ -228,17 +237,106 @@ class RegisterAvizScrean extends StatelessWidget {
               ),
             ),
           ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate((context, index) {
-              return Container(
-                color: MyColors.red3,
-              );
-            }, childCount: 10),
+          SliverPadding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 30,
+              vertical: 10,
+            ),
+            sliver: SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 20),
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          switichValue = !switichValue;
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        height: 50,
+                        width: 340,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: MyColors.greyBase,
+                          border: Border.all(
+                            color: MyColors.grey200,
+                            width: 2,
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Switch(
+                              value: switichValue,
+                              activeColor: MyColors.greyBase,
+                              activeTrackColor: MyColors.red3,
+                              inactiveTrackColor: MyColors.grey400,
+                              splashRadius: 0,
+                              inactiveThumbColor: Colors.white,
+                              onChanged: (bool newValue) {
+                                setState(
+                                  () {
+                                    switichValue = !switichValue;
+                                  },
+                                );
+                              },
+                            ),
+                            Text(
+                              "آسانسور",
+                              style: TextStyle(
+                                color: MyColors.grey700,
+                                fontFamily: "sm",
+                                fontSize: 18,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
+                },
+                childCount: 4,
+              ),
+            ),
           ),
+          SliverPadding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 10,
+              horizontal: 30,
+            ),
+            sliver: SliverToBoxAdapter(
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: MyColors.red3,
+                  // maximumSize: Size(400, 100),
+                  minimumSize: const Size(343, 40),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                ),
+                onPressed: () {},
+                child: Text(
+                  "بعدی",
+                  style: TextStyle(
+                    color: MyColors.greyBase,
+                    fontFamily: "sm",
+                    fontSize: 18,
+                  ),
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
   }
+}
+
+class Global {
+  static final shared = Global();
+  bool isInstructionView = false;
 }
 
 class PropertiyItemWidget extends StatelessWidget {
