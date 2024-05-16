@@ -1,5 +1,8 @@
 import 'package:aviz_application/constant/colors.dart';
 import 'package:aviz_application/screan/category_screan.dart';
+import 'package:aviz_application/screan/location_aviz_screan.dart';
+import 'package:aviz_application/widgets/app_bar.dart';
+import 'package:aviz_application/widgets/category_horizontal_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -16,38 +19,7 @@ class _RegisterAvizScreanState extends State<RegisterAvizScrean> {
     final ValueChanged<bool>? onChanged;
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: MyColors.greyBase,
-        automaticallyImplyLeading: false,
-        surfaceTintColor: MyColors.greyBase,
-        actions: [
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                vertical: 10,
-                horizontal: 20,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Image(image: AssetImage("assets/images/close.png")),
-                  Text(
-                    "ثبت آویز",
-                    style: TextStyle(
-                      fontFamily: "sb",
-                      color: MyColors.red3,
-                      fontSize: 20,
-                    ),
-                  ),
-                  const Image(
-                    image: AssetImage("assets/images/shift-right.png"),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
+      appBar: AvizAppBar(title: "ثبت آویز"),
       body: CustomScrollView(
         slivers: [
           const SliverPadding(
@@ -253,46 +225,9 @@ class _RegisterAvizScreanState extends State<RegisterAvizScrean> {
                           switichValue = !switichValue;
                         });
                       },
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        height: 50,
-                        width: 340,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: MyColors.greyBase,
-                          border: Border.all(
-                            color: MyColors.grey200,
-                            width: 2,
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Switch(
-                              value: switichValue,
-                              activeColor: MyColors.greyBase,
-                              activeTrackColor: MyColors.red3,
-                              inactiveTrackColor: MyColors.grey400,
-                              splashRadius: 0,
-                              inactiveThumbColor: Colors.white,
-                              onChanged: (bool newValue) {
-                                setState(
-                                  () {
-                                    switichValue = !switichValue;
-                                  },
-                                );
-                              },
-                            ),
-                            Text(
-                              "آسانسور",
-                              style: TextStyle(
-                                color: MyColors.grey700,
-                                fontFamily: "sm",
-                                fontSize: 18,
-                              ),
-                            ),
-                          ],
-                        ),
+                      child: SwitchCategoryHorizontal(
+                        switichValue: true,
+                        title: "تست",
                       ),
                     ),
                   );
@@ -309,14 +244,19 @@ class _RegisterAvizScreanState extends State<RegisterAvizScrean> {
             sliver: SliverToBoxAdapter(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: MyColors.red3,
+                  backgroundColor: MyColors.PrimaryBase,
                   // maximumSize: Size(400, 100),
                   minimumSize: const Size(343, 40),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) {
+                    return LocationAvizScrean();
+                  }));
+                },
                 child: Text(
                   "بعدی",
                   style: TextStyle(

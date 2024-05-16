@@ -31,7 +31,7 @@ class WelcomScrean extends StatelessWidget {
 
               effect: ExpandingDotsEffect(
                   dotColor: MyColors.grey,
-                  activeDotColor: MyColors.red3,
+                  activeDotColor: MyColors.PrimaryBase,
                   dotWidth: 10,
                   dotHeight: 10,
                   spacing: 3), // your preferred effect
@@ -61,7 +61,7 @@ class WelcomScrean extends StatelessWidget {
                   child: Text(
                     "ورود",
                     style: TextStyle(
-                      color: MyColors.red3,
+                      color: MyColors.PrimaryBase,
                       fontFamily: "sb",
                       fontSize: 16,
                     ),
@@ -71,7 +71,7 @@ class WelcomScrean extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     maximumSize: const Size(200, 40),
                     minimumSize: const Size(160, 40),
-                    backgroundColor: MyColors.red3,
+                    backgroundColor: MyColors.PrimaryBase,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(4),
                     ),

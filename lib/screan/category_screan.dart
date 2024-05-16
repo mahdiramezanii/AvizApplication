@@ -23,7 +23,7 @@ class CategoryScrean extends StatelessWidget {
                     "دسته بندی آویز",
                     style: TextStyle(
                       fontFamily: "sb",
-                      color: MyColors.red3,
+                      color: MyColors.PrimaryBase,
                     ),
                   ),
                   const Image(
@@ -86,7 +86,7 @@ class ProgressBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: MyColors.red3,
+      color: MyColors.PrimaryBase,
       height: 5,
       width: 40,
     );
@@ -121,7 +121,7 @@ class VerticalCategoryItem extends StatelessWidget {
           children: [
             Image(
               image: const AssetImage("assets/images/shift-left.png"),
-              color: MyColors.red3,
+              color: MyColors.PrimaryBase,
             ),
             Text(
               title,

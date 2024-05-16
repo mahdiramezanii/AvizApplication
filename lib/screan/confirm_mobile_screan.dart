@@ -106,7 +106,7 @@ class ConfirmMobileScrean extends StatelessWidget {
                   maximumSize:const Size(400,80),
                   minimumSize: const Size(350,40),
 
-                  backgroundColor: MyColors.red3,
+                  backgroundColor: MyColors.PrimaryBase,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(4)
                   )
@@ -173,7 +173,7 @@ class InputNumberTextField extends StatelessWidget {
           ),
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              color: MyColors.red3,
+              color: MyColors.PrimaryBase,
             ),
           ),
         ),

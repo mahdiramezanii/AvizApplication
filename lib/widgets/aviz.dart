@@ -69,7 +69,7 @@ class VerticalAviz extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: "sm",
                             fontSize: 12,
-                            color: MyColors.red3,
+                            color: MyColors.PrimaryBase,
                           ),
                         ),
                       ),
@@ -149,7 +149,7 @@ class HorizontalAviz extends StatelessWidget {
                               style: TextStyle(
                                 fontFamily: "sm",
                                 fontSize: 12,
-                                color: MyColors.red3,
+                                color: MyColors.PrimaryBase,
                               ),
                             ),
                           ),
