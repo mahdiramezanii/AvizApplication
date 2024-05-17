@@ -1,3 +1,4 @@
+import 'package:aviz_application/screan/botton_navigation_screan.dart';
 import 'package:aviz_application/screan/category_screan.dart';
 import 'package:aviz_application/screan/home_screan.dart';
 import 'package:aviz_application/screan/profile_screan.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
               outline: Colors.transparent,
             ),
       ),
-      home: ProfileScrean(),
+      home: BottonNavigationScrean(),
     );
   }
 }

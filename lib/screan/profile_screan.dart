@@ -154,7 +154,7 @@ class ProfileScrean extends StatelessWidget {
             ),
           ),
           SliverPadding(
-            padding: EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
               vertical: 10,
               horizontal: 30,
             ),
@@ -204,7 +204,7 @@ class ProfileScrean extends StatelessWidget {
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );
