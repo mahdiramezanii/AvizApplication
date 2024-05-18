@@ -11,6 +11,8 @@ class ProfileScrean extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: MyColors.greyBase,
+        automaticallyImplyLeading: false,
+        surfaceTintColor: MyColors.greyBase,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
