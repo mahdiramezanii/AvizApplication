@@ -2,6 +2,7 @@ import 'package:aviz_application/constant/colors.dart';
 import 'package:aviz_application/screan/home_screan.dart';
 import 'package:aviz_application/screan/profile_screan.dart';
 import 'package:aviz_application/screan/register_aviz_screan.dart';
+import 'package:aviz_application/screan/search_screan.dart';
 import 'package:flutter/material.dart';
 
 class BottonNavigationScrean extends StatefulWidget {
@@ -17,7 +18,7 @@ class _BottonNavigationScreanState extends State<BottonNavigationScrean> {
       backgroundColor: MyColors.greyBase,
       body: IndexedStack(
         index: _currentIndex,
-        children:ScreanListWidget(),
+        children: ScreanListWidget(),
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: MyColors.grey100,
@@ -67,16 +68,12 @@ class _BottonNavigationScreanState extends State<BottonNavigationScrean> {
     );
   }
 
-  List<Widget> ScreanListWidget(){
-
-    List<Widget> response=[
-
+  List<Widget> ScreanListWidget() {
+    List<Widget> response = [
       ProfileScrean(),
       RegisterAvizScrean(),
+      SerachScrean(),
       HomeScrean(),
-      HomeScrean(),
-
-
     ];
 
     return response;

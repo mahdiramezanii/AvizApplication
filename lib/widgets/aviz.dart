@@ -111,6 +111,7 @@ class HorizontalAviz extends StatelessWidget {
               ),
               Flexible(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
                       "ویلا ۵۰۰ متری زیر قیمت",
