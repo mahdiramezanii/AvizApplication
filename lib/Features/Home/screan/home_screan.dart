@@ -123,7 +123,10 @@ class HomeScrean extends StatelessWidget {
                 sliver: SliverList(
                   delegate: SliverChildBuilderDelegate(
                     (context, index) {
-                      return const HorizontalAviz();
+                      return const Padding(
+                        padding:  EdgeInsets.only(bottom: 10),
+                        child:  HorizontalAviz(),
+                      );
                     },
                     childCount: 10,
                   ),

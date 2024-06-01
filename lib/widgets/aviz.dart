@@ -14,79 +14,88 @@ class VerticalAviz extends StatelessWidget {
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
-      child: SizedBox(
-        width: 267,
-        child: Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(4),
-          ),
-          color: MyColors.greyBase,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+      child: Container(
+        width: 230,
+        height: 270,
+        padding: const EdgeInsets.all(16),
+        clipBehavior: Clip.antiAlias,
+        decoration: ShapeDecoration(
+          color: Colors.white,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+          shadows: const [
+            BoxShadow(
+              color: Color.fromARGB(255, 218, 218, 218),
+              blurRadius: 10.0, // soften the shadow
+              spreadRadius: 0.0, //extend the shadow
+              offset: Offset(
+                0.0,
+                10,
+              ),
+            )
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Center(
+              child: Image(
+                image: AssetImage("assets/images/h1.png"),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              promotaion.title,
+              maxLines: 1,
+              style: TextStyle(
+                overflow: TextOverflow.ellipsis,
+                color: MyColors.grey700,
+                fontFamily: "sb",
+                fontSize: 16,
+              ),
+            ),
+            const SizedBox(
+              height: 7,
+            ),
+            Text(
+              textDirection: TextDirection.rtl,
+              "ویو عالی، سند تک برگ، سال ساخت ۱۴۰۲، تحویل فوری",
+              style: TextStyle(color: MyColors.grey500, fontFamily: "sb"),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Center(
-                  child: Image(
-                    image: AssetImage("assets/images/h1.png"),
-                  ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
                 Text(
-                  promotaion.title,
-                  maxLines: 1,
+                  ":قیمت",
+                  textDirection: TextDirection.ltr,
                   style: TextStyle(
-                    overflow: TextOverflow.ellipsis,
-                    color: MyColors.grey700,
                     fontFamily: "sb",
                     fontSize: 16,
+                    color: MyColors.grey700,
                   ),
                 ),
-                const SizedBox(
-                  height: 7,
-                ),
-                Text(
-                  textDirection: TextDirection.rtl,
-                  "ویو عالی، سند تک برگ، سال ساخت ۱۴۰۲، تحویل فوری",
-                  style: TextStyle(color: MyColors.grey500, fontFamily: "sb"),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      ":قیمت",
-                      textDirection: TextDirection.ltr,
+                Container(
+                  width: 91,
+                  height: 26,
+                  color: MyColors.grey100,
+                  child: Center(
+                    child: Text(
+                      "۲۵٬۶۸۳٬۰۰۰٬۰۰۰",
                       style: TextStyle(
-                        fontFamily: "sb",
-                        fontSize: 16,
-                        color: MyColors.grey700,
+                        fontFamily: "sm",
+                        fontSize: 12,
+                        color: MyColors.PrimaryBase,
                       ),
                     ),
-                    Container(
-                      width: 91,
-                      height: 26,
-                      color: MyColors.grey100,
-                      child: Center(
-                        child: Text(
-                          "۲۵٬۶۸۳٬۰۰۰٬۰۰۰",
-                          style: TextStyle(
-                            fontFamily: "sm",
-                            fontSize: 12,
-                            color: MyColors.PrimaryBase,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                )
+                  ),
+                ),
               ],
-            ),
-          ),
+            )
+          ],
         ),
       ),
     );
@@ -104,8 +113,9 @@ class HorizontalAviz extends StatelessWidget {
       width: 343,
       height: 145,
       child: Card(
+        surfaceTintColor: Colors.transparent,
         color: Colors.white,
-        elevation: 1,
+        elevation: 3,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(4),
         ),
