@@ -1,7 +1,9 @@
+import 'package:aviz_application/Di/di.dart';
 import 'package:aviz_application/screan/botton_navigation_screan.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  await initLocator();
   runApp(MyApp());
 }
 

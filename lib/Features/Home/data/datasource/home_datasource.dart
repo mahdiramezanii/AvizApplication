@@ -4,16 +4,20 @@ import 'package:aviz_application/Features/Home/data/models/promotions_model.dart
 import 'package:dio/dio.dart';
 
 abstract class IHomeDataSource {
-  Future<List<Promotaions>> getPromotaionList();
+  Future<List<Promotaions>> getHotestPromotaionList();
 }
 
 class HomeDataSourceRemote extends IHomeDataSource {
-  Dio _dio = locator.get();
+  final Dio dio;
+
+  HomeDataSourceRemote({required this.dio});
 
   @override
-  Future<List<Promotaions>> getPromotaionList() async {
+  Future<List<Promotaions>> getHotestPromotaionList() async {
     try {
-      var response = await _dio.get("collections/promotaion/records");
+      Map<String, String> qparam = {"filter": "is_hotest=true"};
+      var response = await dio.get("collections/promotaion/records",
+          queryParameters: qparam);
 
       return response.data["items"].map<Promotaions>((jsonObject) {
         return Promotaions.fromJson(jsonObject);

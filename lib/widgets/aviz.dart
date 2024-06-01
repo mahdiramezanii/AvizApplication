@@ -1,10 +1,13 @@
+import 'package:aviz_application/Features/Home/data/models/promotions_model.dart';
 import 'package:aviz_application/constant/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class VerticalAviz extends StatelessWidget {
-  const VerticalAviz({
+  Promotaions promotaion;
+  VerticalAviz({
     super.key,
+    required this.promotaion,
   });
 
   @override
@@ -24,13 +27,18 @@ class VerticalAviz extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Center(
-                    child: Image(image: AssetImage("assets/images/h1.png"))),
+                  child: Image(
+                    image: AssetImage("assets/images/h1.png"),
+                  ),
+                ),
                 const SizedBox(
                   height: 10,
                 ),
                 Text(
-                  "ویلا ۵۰۰ متری زیر قیمت",
+                  promotaion.title,
+                  maxLines: 1,
                   style: TextStyle(
+                    overflow: TextOverflow.ellipsis,
                     color: MyColors.grey700,
                     fontFamily: "sb",
                     fontSize: 16,
