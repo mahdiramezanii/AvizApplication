@@ -17,7 +17,7 @@ class Promotaions {
     return Promotaions(
       title: jsonObject["title"],
       price: jsonObject["price"],
-      description: jsonObject["description"],
+      description: jsonObject["decription"],
       image:
           "${StringConstant.baseUrl}/files/${jsonObject["collectionId"]}/${jsonObject["id"]}/${jsonObject["image"]}",
     );
