@@ -1,8 +1,8 @@
 import 'package:aviz_application/constant/colors.dart';
-import 'package:aviz_application/screan/home_screan.dart';
+import 'package:aviz_application/Features/Home/screan/home_screan.dart';
 import 'package:aviz_application/screan/profile_screan.dart';
 import 'package:aviz_application/screan/register_aviz_screan.dart';
-import 'package:aviz_application/screan/search_screan.dart';
+import 'package:aviz_application/Features/search/screan/search_screan.dart';
 import 'package:flutter/material.dart';
 
 class BottonNavigationScrean extends StatefulWidget {
