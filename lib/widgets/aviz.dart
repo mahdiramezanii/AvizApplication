@@ -96,7 +96,8 @@ class HorizontalAviz extends StatelessWidget {
       width: 343,
       height: 145,
       child: Card(
-        color: MyColors.greyBase,
+        color: Colors.white,
+        elevation: 1,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(4),
         ),
@@ -110,6 +111,7 @@ class HorizontalAviz extends StatelessWidget {
               ),
               Flexible(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
                       "ویلا ۵۰۰ متری زیر قیمت",
