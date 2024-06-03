@@ -1,5 +1,6 @@
 import 'package:aviz_application/Features/Home/data/models/promotions_model.dart';
 import 'package:aviz_application/constant/colors.dart';
+import 'package:aviz_application/utility/network_imgae.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -16,7 +17,7 @@ class VerticalAviz extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Container(
         width: 230,
-        height: 270,
+        height: 300,
         padding: const EdgeInsets.all(16),
         clipBehavior: Clip.antiAlias,
         decoration: ShapeDecoration(
@@ -37,11 +38,12 @@ class VerticalAviz extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Center(
-              child: Image(
-                image: AssetImage("assets/images/h1.png"),
-              ),
-            ),
+            Center(
+                child: CashNetworkImage(
+              image_url: promotaion.image,
+              height: 112,
+              width: 200,
+            )),
             const SizedBox(
               height: 10,
             ),
