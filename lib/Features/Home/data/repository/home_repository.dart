@@ -16,8 +16,11 @@ class HomeRepository extends IHomeRepository {
   Future<Either<String, List<Promotaions>>> getHotestPromotaionList() async {
     try {
       var response = await dataSource.getHotestPromotaionList();
+
+      print(response[0].image);
       
       return Right(response);
+      
     } on ApiException catch (ex) {
       return Left(ex.message);
     }

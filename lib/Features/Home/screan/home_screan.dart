@@ -78,6 +78,7 @@ class HomeScrean extends StatelessWidget {
                                   left: 15,
                                   right: index == 0 ? 15 : 0,
                                   top: 15,
+                                  bottom: 15
                                 ),
                                 child: VerticalAviz(promotaion: promotaionList[index],),
                               );
