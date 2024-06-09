@@ -1,9 +1,13 @@
+import 'package:aviz_application/Di/di.dart';
+import 'package:aviz_application/Features/Home/bloc/home_bloc.dart';
+import 'package:aviz_application/Features/Home/bloc/home_event.dart';
 import 'package:aviz_application/constant/colors.dart';
-import 'package:aviz_application/screan/home_screan.dart';
+import 'package:aviz_application/Features/Home/screan/home_screan.dart';
 import 'package:aviz_application/screan/profile_screan.dart';
 import 'package:aviz_application/screan/register_aviz_screan.dart';
-import 'package:aviz_application/screan/search_screan.dart';
+import 'package:aviz_application/Features/search/screan/search_screan.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BottonNavigationScrean extends StatefulWidget {
   @override
@@ -73,7 +77,14 @@ class _BottonNavigationScreanState extends State<BottonNavigationScrean> {
       ProfileScrean(),
       RegisterAvizScrean(),
       SerachScrean(),
-      HomeScrean(),
+      BlocProvider(
+        create: (context) {
+          var bloc = HomeBloc(repository: locator.get());
+          bloc.add(getHotestPromotaionEvent());
+          return bloc;
+        },
+        child: HomeScrean(),
+      ),
     ];
 
     return response;
