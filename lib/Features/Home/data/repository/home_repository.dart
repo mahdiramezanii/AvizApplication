@@ -17,7 +17,7 @@ class HomeRepository extends IHomeRepository {
     try {
       var response = await dataSource.getHotestPromotaionList();
 
-      print(response[0].image);
+      
       
       return Right(response);
       

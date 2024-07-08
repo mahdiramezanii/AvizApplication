@@ -15,7 +15,7 @@ class HomeDataSourceRemote extends IHomeDataSource {
   @override
   Future<List<Promotaions>> getHotestPromotaionList() async {
     try {
-      Map<String, String> qparam = {"filter": "is_hotest=true"};
+      Map<String, String> qparam = {"filter": "is_hot=true"};
       var response = await dio.get("collections/promotaion/records",
           queryParameters: qparam);
 
@@ -23,10 +23,8 @@ class HomeDataSourceRemote extends IHomeDataSource {
         return Promotaions.fromJson(jsonObject);
       }).toList();
     } on DioException catch (ex) {
-      throw ApiException(
-        code: ex.response!.statusCode!,
-        message: ex.response!.data["message"],
-      );
+      print(ex);
+      throw ApiException(code: 0, message: "خطا محتوای متنی ندارد");
     } catch (ex) {
       throw ApiException(code: 0, message: "خطا محتوای متنی ندارد");
     }

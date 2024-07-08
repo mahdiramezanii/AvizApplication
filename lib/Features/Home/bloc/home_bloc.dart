@@ -7,10 +7,15 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final IHomeRepository repository;
 
   HomeBloc({required this.repository}) : super(initialHomeState()) {
-    on((getHotestPromotaionEvent, emit) async {
+
+    on<getHotestPromotaionsEvent>((event, emit) async {
+
+      
+
       emit(LoadingHomeSatet());
       var response = await repository.getHotestPromotaionList();
       emit(ResponseHomeState(promotopanList: response));
+      
     });
   }
 }

@@ -3,7 +3,4 @@ abstract class HomeEvent{
 }
 
 
-class getHotestPromotaionEvent extends HomeEvent{
-
-  
-}
+class getHotestPromotaionsEvent extends HomeEvent{}
