@@ -22,9 +22,12 @@ class HomeScrean extends StatelessWidget {
                   padding: EdgeInsets.all(10),
                   sliver: SliverToBoxAdapter(
                     child: SizedBox(
-                        height: 30,
-                        width: 30,
-                        child: Center(child: CircularProgressIndicator())),
+                      height: 30,
+                      width: 30,
+                      child: Center(
+                        child: CircularProgressIndicator(),
+                      ),
+                    ),
                   ),
                 )
               },
@@ -58,7 +61,7 @@ class HomeScrean extends StatelessWidget {
                   ),
                 ),
                 state.promotopanList.fold((l) {
-                 return SliverToBoxAdapter(
+                  return SliverToBoxAdapter(
                     child: Text(l),
                   );
                 }, (promotaionList) {
@@ -75,12 +78,13 @@ class HomeScrean extends StatelessWidget {
                             itemBuilder: ((context, index) {
                               return Padding(
                                 padding: EdgeInsets.only(
-                                  left: 15,
-                                  right: index == 0 ? 15 : 0,
-                                  top: 15,
-                                  bottom: 15
+                                    left: 15,
+                                    right: index == 0 ? 15 : 0,
+                                    top: 15,
+                                    bottom: 15),
+                                child: VerticalAviz(
+                                  promotaion: promotaionList[index],
                                 ),
-                                child: VerticalAviz(promotaion: promotaionList[index],),
                               );
                             }),
                           ),
@@ -125,8 +129,8 @@ class HomeScrean extends StatelessWidget {
                   delegate: SliverChildBuilderDelegate(
                     (context, index) {
                       return const Padding(
-                        padding:  EdgeInsets.only(bottom: 10),
-                        child:  HorizontalAviz(),
+                        padding: EdgeInsets.only(bottom: 10),
+                        child: HorizontalAviz(),
                       );
                     },
                     childCount: 10,

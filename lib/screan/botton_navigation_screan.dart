@@ -80,7 +80,7 @@ class _BottonNavigationScreanState extends State<BottonNavigationScrean> {
       BlocProvider(
         create: (context) {
           var bloc = HomeBloc(repository: locator.get());
-          bloc.add(getHotestPromotaionEvent());
+          bloc.add(getHotestPromotaionsEvent());
           return bloc;
         },
         child: HomeScrean(),
