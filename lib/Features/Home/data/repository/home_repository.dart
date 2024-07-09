@@ -4,7 +4,7 @@ import 'package:aviz_application/Features/Home/data/models/promotions_model.dart
 import 'package:dartz/dartz.dart';
 
 abstract class IHomeRepository {
-  Future<Either<String, List<Promotaions>>> getHotestPromotaionList();
+  Future<Either<String, List<Promotion>>> getHotestPromotaionList();
 }
 
 class HomeRepository extends IHomeRepository {
@@ -13,7 +13,7 @@ class HomeRepository extends IHomeRepository {
   HomeRepository({required this.dataSource});
 
   @override
-  Future<Either<String, List<Promotaions>>> getHotestPromotaionList() async {
+  Future<Either<String, List<Promotion>>> getHotestPromotaionList() async {
     try {
       var response = await dataSource.getHotestPromotaionList();
 

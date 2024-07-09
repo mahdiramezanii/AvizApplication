@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class VerticalAviz extends StatelessWidget {
-  Promotaions promotaion;
+  Promotion promotaion;
   VerticalAviz({
     super.key,
     required this.promotaion,
@@ -40,7 +40,7 @@ class VerticalAviz extends StatelessWidget {
           children: [
             Center(
                 child: CashNetworkImage(
-              image_url: promotaion.image,
+              image_url: promotaion.thumbnailUrl,
               height: 112,
               width: 200,
             )),

@@ -1,25 +1,26 @@
 import 'package:aviz_application/constant/string_constant.dart';
 
-class Promotaions {
+class Promotion {
+  String id;
   String title;
   String description;
+  String thumbnailUrl;
   int price;
-  String image;
 
-  Promotaions({
-    required this.title,
-    required this.price,
-    required this.description,
-    required this.image,
-  });
+  Promotion(
+      {required this.id,
+      required this.title,
+      required this.description,
+      required this.thumbnailUrl,
+      required this.price});
 
-  factory Promotaions.fromJson(Map<String, dynamic> jsonObject) {
-    return Promotaions(
-      title: jsonObject["title"],
-      price: jsonObject["price"],
-      description: jsonObject["decription"],
-      image:
-          "${StringConstant.baseUrl}files/${jsonObject["collectionId"]}/${jsonObject["id"]}/${jsonObject["image"]}",
-    );
+  factory Promotion.fromJson(Map<String, dynamic> jsonObject) {
+    return Promotion(
+        id: jsonObject['id'],
+        title: jsonObject['name'],
+        description: jsonObject['description'],
+        thumbnailUrl:
+            '${StringConstant.baseUrl}files/${jsonObject['collectionId']}/${jsonObject['id']}/${jsonObject['thumbnail']}',
+        price: jsonObject['price']);
   }
 }
