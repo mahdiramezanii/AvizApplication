@@ -5,11 +5,12 @@ import 'package:dartz/dartz.dart';
 
 abstract class IHomeRepository {
   Future<Either<String, List<Promotion>>> getHotestPromotaionList();
+  Future<Either<String, List<Promotion>>> getNormailPromoationList();
 }
 
 class HomeRepository extends IHomeRepository {
   final IHomeDataSource dataSource;
-  
+
   HomeRepository({required this.dataSource});
 
   @override
@@ -17,12 +18,20 @@ class HomeRepository extends IHomeRepository {
     try {
       var response = await dataSource.getHotestPromotaionList();
 
-      
-      
       return Right(response);
-      
     } on ApiException catch (ex) {
       return Left(ex.message);
+    }
+  }
+
+  @override
+  Future<Either<String, List<Promotion>>> getNormailPromoationList() async {
+    try {
+      var response = await dataSource.getNormailPromoationList();
+
+      return right(response);
+    } on ApiException catch (ex) {
+      return left(ex.message);
     }
   }
 }

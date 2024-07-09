@@ -94,49 +94,59 @@ class HomeScrean extends StatelessWidget {
                   );
                 }),
               },
-              SliverPadding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                sliver: SliverToBoxAdapter(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "مشاهده همه",
-                        style: TextStyle(
-                          color: MyColors.grey400,
-                          fontFamily: "sm",
-                          fontSize: 16,
+              if (state is ResponseHomeState) ...{
+                SliverPadding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 10,
+                    horizontal: 15,
+                  ),
+                  sliver: SliverToBoxAdapter(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "مشاهده همه",
+                          style: TextStyle(
+                            color: MyColors.grey400,
+                            fontFamily: "sm",
+                            fontSize: 16,
+                          ),
                         ),
-                      ),
-                      Text(
-                        "آویز های اخیر",
-                        style: TextStyle(
-                          color: MyColors.grey700,
-                          fontFamily: "sb",
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
+                        Text(
+                          "آویز های اخیر",
+                          style: TextStyle(
+                            color: MyColors.grey700,
+                            fontFamily: "sb",
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              SliverPadding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-                sliver: SliverList(
-                  delegate: SliverChildBuilderDelegate(
-                    (context, index) {
-                      return const Padding(
-                        padding: EdgeInsets.only(bottom: 10),
-                        child: HorizontalAviz(),
-                      );
-                    },
-                    childCount: 10,
-                  ),
-                ),
-              ),
+                state.normalPromotaion.fold((l) {
+                  return SliverToBoxAdapter(
+                    child: Text(l),
+                  );
+                }, (normalPromotaion) {
+                  return SliverPadding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 15),
+                    sliver: SliverList(
+                      delegate: SliverChildBuilderDelegate(
+                        (context, index) {
+                          return Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: HorizontalAviz(normalPromotaion[index]),
+                          );
+                        },
+                        childCount: normalPromotaion.length,
+                      ),
+                    ),
+                  );
+                })
+              }
             ],
           ),
         ),

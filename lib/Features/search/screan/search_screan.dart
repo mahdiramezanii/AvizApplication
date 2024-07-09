@@ -18,7 +18,7 @@ class SerachScrean extends StatelessWidget {
                 textDirection: TextDirection.rtl,
                 child: TextField(
                   decoration: InputDecoration(
-                      contentPadding: EdgeInsets.all(5),
+                      contentPadding: const EdgeInsets.all(5),
                       hintText: "جستجو...",
                       hintStyle:
                           TextStyle(color: MyColors.grey400, fontFamily: "sb"),
@@ -37,19 +37,19 @@ class SerachScrean extends StatelessWidget {
               ),
             ),
           ),
-          SliverPadding(
-            padding: const EdgeInsets.symmetric(
-              vertical: 10,
-              horizontal: 10,
-            ),
-            sliver: SliverList(
-                delegate: SliverChildBuilderDelegate((context, index) {
-              return const Padding(
-                padding: EdgeInsets.only(bottom: 8),
-                child: HorizontalAviz(),
-              );
-            })),
-          )
+          // SliverPadding(
+          //   padding: const EdgeInsets.symmetric(
+          //     vertical: 10,
+          //     horizontal: 10,
+          //   ),
+          //   sliver: SliverList(
+          //       delegate: SliverChildBuilderDelegate((context, index) {
+          //     return const Padding(
+          //       padding: EdgeInsets.only(bottom: 8),
+          //       child: HorizontalAviz(),
+          //     );
+          //   })),
+          // )
         ],
       ),
     );

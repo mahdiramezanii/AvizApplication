@@ -10,26 +10,29 @@ class CashNetworkImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CachedNetworkImage(
-      imageUrl: image_url,
-      placeholder: (context, url) {
-        return Container(
-          color: Colors.white,
-          height: height ?? 30,
-          width: width ?? 30,
-          child: Center(
-              child: CircularProgressIndicator(
-            color: MyColors.PrimaryBase,
-          )),
-        );
-      },
-      errorWidget: (context, url, error) {
-        return Container(
-          height: 26,
-          width: 26,
-          child: Center(child: CircularProgressIndicator()),
-        );
-      },
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(5),
+      child: CachedNetworkImage(
+        imageUrl: image_url,
+        placeholder: (context, url) {
+          return Container(
+            color: Colors.white,
+            height: height ?? 30,
+            width: width ?? 30,
+            child: Center(
+                child: CircularProgressIndicator(
+              color: MyColors.PrimaryBase,
+            )),
+          );
+        },
+        errorWidget: (context, url, error) {
+          return const SizedBox(
+            height: 26,
+            width: 26,
+            child: Center(child: CircularProgressIndicator()),
+          );
+        },
+      ),
     );
   }
 }
