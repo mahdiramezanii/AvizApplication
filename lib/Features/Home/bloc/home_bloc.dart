@@ -10,11 +10,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
     on<getHotestPromotaionsEvent>((event, emit) async {
 
-      
-
       emit(LoadingHomeSatet());
       var response = await repository.getHotestPromotaionList();
-      emit(ResponseHomeState(promotopanList: response));
+      var normalPromotaion= await repository.getNormailPromoationList();
+      emit(ResponseHomeState(promotopanList: response,normalPromotaion: normalPromotaion));
       
     });
   }

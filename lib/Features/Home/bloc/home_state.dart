@@ -9,6 +9,7 @@ class LoadingHomeSatet extends HomeState {}
 
 class ResponseHomeState extends HomeState {
   Either<String, List<Promotion>> promotopanList;
+  Either<String,List<Promotion>> normalPromotaion;
 
-  ResponseHomeState({required this.promotopanList});
+  ResponseHomeState({required this.promotopanList,required this.normalPromotaion});
 }

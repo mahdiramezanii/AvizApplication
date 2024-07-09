@@ -1,6 +1,7 @@
 import 'package:aviz_application/Features/Home/data/models/promotions_model.dart';
 import 'package:aviz_application/constant/colors.dart';
 import 'package:aviz_application/utility/network_imgae.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -105,7 +106,9 @@ class VerticalAviz extends StatelessWidget {
 }
 
 class HorizontalAviz extends StatelessWidget {
-  const HorizontalAviz({
+  Promotion normalPromotaion;
+  HorizontalAviz(
+    this.normalPromotaion, {
     super.key,
   });
 
@@ -113,7 +116,6 @@ class HorizontalAviz extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 343,
-      height: 145,
       child: Card(
         surfaceTintColor: Colors.transparent,
         color: Colors.white,
@@ -125,7 +127,13 @@ class HorizontalAviz extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
           child: Row(
             children: [
-              const Image(image: AssetImage("assets/images/h2.png")),
+              SizedBox(
+                width: 150,
+                height: 100,
+                child: CashNetworkImage(
+                  image_url: normalPromotaion.thumbnailUrl,
+                ),
+              ),
               const SizedBox(
                 width: 20,
               ),
@@ -134,7 +142,9 @@ class HorizontalAviz extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
-                      "ویلا ۵۰۰ متری زیر قیمت",
+                      normalPromotaion.title,
+                      textAlign: TextAlign.right,
+                      maxLines: 2,
                       style: TextStyle(
                         color: MyColors.grey700,
                         fontFamily: "sb",
@@ -146,9 +156,9 @@ class HorizontalAviz extends StatelessWidget {
                     ),
                     Text(
                       textDirection: TextDirection.rtl,
-                      "سال ساخت ۱۳۹۸، سند تک برگ، دوبلکس تجهیزات کامل",
+                      normalPromotaion.description,
                       overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
+                      maxLines: 2,
                       style: TextStyle(
                         color: MyColors.grey500,
                         fontFamily: "sb",
@@ -167,7 +177,7 @@ class HorizontalAviz extends StatelessWidget {
                           color: MyColors.grey100,
                           child: Center(
                             child: Text(
-                              "۲۵٬۶۸۳٬۰۰۰٬۰۰۰",
+                              normalPromotaion.price.toString(),
                               style: TextStyle(
                                 fontFamily: "sm",
                                 fontSize: 12,
