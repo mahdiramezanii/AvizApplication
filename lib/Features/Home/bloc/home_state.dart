@@ -8,7 +8,7 @@ class initialHomeState extends HomeState {}
 class LoadingHomeSatet extends HomeState {}
 
 class ResponseHomeState extends HomeState {
-  Either<String, List<Promotaions>> promotopanList;
+  Either<String, List<Promotion>> promotopanList;
 
   ResponseHomeState({required this.promotopanList});
 }
