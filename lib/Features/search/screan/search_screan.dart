@@ -1,29 +1,37 @@
+import 'package:aviz_application/Features/Home/bloc/home_bloc.dart';
+import 'package:aviz_application/Features/Home/data/models/promotions_model.dart';
+import 'package:aviz_application/Features/search/bloc/search_bloc.dart';
+import 'package:aviz_application/Features/search/bloc/search_event.dart';
+import 'package:aviz_application/Features/search/bloc/serch_state.dart';
 import 'package:aviz_application/constant/colors.dart';
 import 'package:aviz_application/widgets/app_bar.dart';
 import 'package:aviz_application/widgets/aviz.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SerachScrean extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: MyColors.greyBase,
-      appBar: AvizAppBar(title: "جستجوی آویز"),
-      body: CustomScrollView(
-        slivers: [
-          SliverPadding(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-            sliver: SliverToBoxAdapter(
-              child: Directionality(
-                textDirection: TextDirection.rtl,
-                child: TextField(
-                  onSubmitted: (value) {
-                    print(value);
-                  },
-                  decoration: InputDecoration(
+    return BlocBuilder<SerachBloc, SerachState>(builder: (context, state) {
+      return Scaffold(
+        backgroundColor: MyColors.greyBase,
+        appBar: AvizAppBar(title: "جستجوی آویز"),
+        body: CustomScrollView(
+          slivers: [
+            SliverPadding(
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+              sliver: SliverToBoxAdapter(
+                child: Directionality(
+                  textDirection: TextDirection.rtl,
+                  child: TextField(
+                    onSubmitted: (value) {
+                      context
+                          .read<SerachBloc>()
+                          .add(RequestToSerachEvent(query: value));
+                    },
+                    decoration: InputDecoration(
                       contentPadding: const EdgeInsets.all(5),
                       hintText: "جستجو...",
-                      
                       hintStyle:
                           TextStyle(color: MyColors.grey400, fontFamily: "sb"),
                       prefixIcon:
@@ -35,27 +43,50 @@ class SerachScrean extends StatelessWidget {
                         ),
                       ),
                       focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5),
-                          borderSide: BorderSide(color: MyColors.PrimaryBase))),
+                        borderRadius: BorderRadius.circular(5),
+                        borderSide: BorderSide(color: MyColors.PrimaryBase),
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),
-          ),
-          // SliverPadding(
-          //   padding: const EdgeInsets.symmetric(
-          //     vertical: 10,
-          //     horizontal: 10,
-          //   ),
-          //   sliver: SliverList(
-          //       delegate: SliverChildBuilderDelegate((context, index) {
-          //     return const Padding(
-          //       padding: EdgeInsets.only(bottom: 8),
-          //       child: HorizontalAviz(),
-          //     );
-          //   })),
-          // )
-        ],
-      ),
-    );
+            if (state is LoadingSerachState) ...{
+              const SliverToBoxAdapter(
+                child: Center(child: CircularProgressIndicator()),
+              )
+            },
+            if (state is ResponseSerchState) ...{
+              state.promotioan_serch_result.fold((l) {
+                return SliverToBoxAdapter(
+                  child: Center(
+                    child: Text(l),
+                  ),
+                );
+              }, (promotaionList) {
+                return SliverPadding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 10,
+                    horizontal: 10,
+                  ),
+                  sliver: SliverList(
+                    delegate: SliverChildBuilderDelegate(
+                      (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.only(bottom: 8),
+                          child: HorizontalAviz(promotaionList[index]),
+                        );
+                      },
+                      childCount: promotaionList.length
+                    ),
+                    
+                  ),
+                );
+              }),
+            }
+          ],
+        ),
+      );
+    });
   }
 }

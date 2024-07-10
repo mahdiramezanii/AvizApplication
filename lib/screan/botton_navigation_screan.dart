@@ -1,6 +1,7 @@
 import 'package:aviz_application/Di/di.dart';
 import 'package:aviz_application/Features/Home/bloc/home_bloc.dart';
 import 'package:aviz_application/Features/Home/bloc/home_event.dart';
+import 'package:aviz_application/Features/search/bloc/search_bloc.dart';
 import 'package:aviz_application/constant/colors.dart';
 import 'package:aviz_application/Features/Home/screan/home_screan.dart';
 import 'package:aviz_application/screan/profile_screan.dart';
@@ -76,7 +77,12 @@ class _BottonNavigationScreanState extends State<BottonNavigationScrean> {
     List<Widget> response = [
       ProfileScrean(),
       RegisterAvizScrean(),
-      SerachScrean(),
+      BlocProvider(
+        create: (context) {
+          return SerachBloc(repository: locator.get());
+        },
+        child: SerachScrean(),
+      ),
       BlocProvider(
         create: (context) {
           var bloc = HomeBloc(repository: locator.get());
