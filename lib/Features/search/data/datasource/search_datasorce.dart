@@ -10,7 +10,6 @@ abstract class ISearchDataSource {
 
 }
 
-
 class SearchRemoteDataSource extends ISearchDataSource{
 
   final Dio dio;
