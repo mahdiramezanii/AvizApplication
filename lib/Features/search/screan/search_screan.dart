@@ -17,9 +17,13 @@ class SerachScrean extends StatelessWidget {
               child: Directionality(
                 textDirection: TextDirection.rtl,
                 child: TextField(
+                  onSubmitted: (value) {
+                    print(value);
+                  },
                   decoration: InputDecoration(
                       contentPadding: const EdgeInsets.all(5),
                       hintText: "جستجو...",
+                      
                       hintStyle:
                           TextStyle(color: MyColors.grey400, fontFamily: "sb"),
                       prefixIcon:
