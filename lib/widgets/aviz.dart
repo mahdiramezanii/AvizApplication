@@ -40,11 +40,12 @@ class VerticalAviz extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Center(
-                child: CashNetworkImage(
-              image_url: promotaion.thumbnailUrl,
-              height: 112,
-              width: 200,
-            )),
+              child: CashNetworkImage(
+                image_url: promotaion.thumbnailUrl,
+                height: 112,
+                width: 200,
+              ),
+            ),
             const SizedBox(
               height: 10,
             ),
@@ -129,7 +130,6 @@ class HorizontalAviz extends StatelessWidget {
             children: [
               SizedBox(
                 width: 150,
-                height: 100,
                 child: CashNetworkImage(
                   image_url: normalPromotaion.thumbnailUrl,
                 ),
