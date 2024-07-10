@@ -1,6 +1,8 @@
 import 'package:aviz_application/Features/Home/bloc/home_bloc.dart';
 import 'package:aviz_application/Features/Home/data/datasource/home_datasource.dart';
 import 'package:aviz_application/Features/Home/data/repository/home_repository.dart';
+import 'package:aviz_application/Features/search/data/datasource/search_datasorce.dart';
+import 'package:aviz_application/Features/search/data/repository/serach_repository.dart';
 import 'package:aviz_application/NetworkUtil/dio_provider.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
@@ -16,6 +18,10 @@ Future<void> initLocator() async {
 
   locator.registerFactory<IHomeRepository>(
       () => HomeRepository(dataSource: locator.get()));
+
+  locator.registerFactory<ISearchDataSource>(() => SearchRemoteDataSource(dio: locator.get()));
+
+  locator.registerFactory<ISerachRepository>(() => SerachRepository(dataSource: locator.get()));
 
 
       locator.registerSingleton<HomeBloc>(HomeBloc(repository: locator.get()));
