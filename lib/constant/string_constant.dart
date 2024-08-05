@@ -1,3 +1,3 @@
 class StringConstant {
-  static String baseUrl = "https://aviz.liara.run/api/";
+  static String baseUrl = "https://startflutter.ir/api/";
 }

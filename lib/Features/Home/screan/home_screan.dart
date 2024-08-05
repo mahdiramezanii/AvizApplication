@@ -22,9 +22,12 @@ class HomeScrean extends StatelessWidget {
                   padding: EdgeInsets.all(10),
                   sliver: SliverToBoxAdapter(
                     child: SizedBox(
-                        height: 30,
-                        width: 30,
-                        child: Center(child: CircularProgressIndicator())),
+                      height: 30,
+                      width: 30,
+                      child: Center(
+                        child: CircularProgressIndicator(),
+                      ),
+                    ),
                   ),
                 )
               },
@@ -58,7 +61,7 @@ class HomeScrean extends StatelessWidget {
                   ),
                 ),
                 state.promotopanList.fold((l) {
-                 return SliverToBoxAdapter(
+                  return SliverToBoxAdapter(
                     child: Text(l),
                   );
                 }, (promotaionList) {
@@ -75,12 +78,13 @@ class HomeScrean extends StatelessWidget {
                             itemBuilder: ((context, index) {
                               return Padding(
                                 padding: EdgeInsets.only(
-                                  left: 15,
-                                  right: index == 0 ? 15 : 0,
-                                  top: 15,
-                                  bottom: 15
+                                    left: 15,
+                                    right: index == 0 ? 15 : 0,
+                                    top: 15,
+                                    bottom: 15),
+                                child: VerticalAviz(
+                                  promotaion: promotaionList[index],
                                 ),
-                                child: VerticalAviz(promotaion: promotaionList[index],),
                               );
                             }),
                           ),
@@ -90,49 +94,59 @@ class HomeScrean extends StatelessWidget {
                   );
                 }),
               },
-              SliverPadding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                sliver: SliverToBoxAdapter(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "مشاهده همه",
-                        style: TextStyle(
-                          color: MyColors.grey400,
-                          fontFamily: "sm",
-                          fontSize: 16,
+              if (state is ResponseHomeState) ...{
+                SliverPadding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 10,
+                    horizontal: 15,
+                  ),
+                  sliver: SliverToBoxAdapter(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "مشاهده همه",
+                          style: TextStyle(
+                            color: MyColors.grey400,
+                            fontFamily: "sm",
+                            fontSize: 16,
+                          ),
                         ),
-                      ),
-                      Text(
-                        "آویز های اخیر",
-                        style: TextStyle(
-                          color: MyColors.grey700,
-                          fontFamily: "sb",
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
+                        Text(
+                          "آویز های اخیر",
+                          style: TextStyle(
+                            color: MyColors.grey700,
+                            fontFamily: "sb",
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              SliverPadding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-                sliver: SliverList(
-                  delegate: SliverChildBuilderDelegate(
-                    (context, index) {
-                      return const Padding(
-                        padding:  EdgeInsets.only(bottom: 10),
-                        child:  HorizontalAviz(),
-                      );
-                    },
-                    childCount: 10,
-                  ),
-                ),
-              ),
+                state.normalPromotaion.fold((l) {
+                  return SliverToBoxAdapter(
+                    child: Text(l),
+                  );
+                }, (normalPromotaion) {
+                  return SliverPadding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 15),
+                    sliver: SliverList(
+                      delegate: SliverChildBuilderDelegate(
+                        (context, index) {
+                          return Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: HorizontalAviz(normalPromotaion[index]),
+                          );
+                        },
+                        childCount: normalPromotaion.length,
+                      ),
+                    ),
+                  );
+                })
+              }
             ],
           ),
         ),
