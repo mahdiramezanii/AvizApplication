@@ -1,4 +1,4 @@
-package com.example.aviz_application
+package com.example.aviz
 
 import io.flutter.embedding.android.FlutterActivity
 

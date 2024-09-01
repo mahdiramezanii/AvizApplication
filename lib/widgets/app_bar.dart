@@ -1,4 +1,5 @@
-import 'package:aviz_application/constant/colors.dart';
+
+import 'package:aviz/constant/colors.dart';
 import 'package:flutter/material.dart';
 
 PreferredSizeWidget getAppBar() {

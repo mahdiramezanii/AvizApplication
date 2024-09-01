@@ -1,6 +1,7 @@
-import 'package:aviz_application/Features/Home/data/models/promotions_model.dart';
-import 'package:aviz_application/constant/colors.dart';
-import 'package:aviz_application/utility/network_imgae.dart';
+
+import 'package:aviz/Features/Home/data/models/promotions_model.dart';
+import 'package:aviz/constant/colors.dart';
+import 'package:aviz/utility/network_imgae.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';

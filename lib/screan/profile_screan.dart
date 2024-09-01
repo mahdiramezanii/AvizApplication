@@ -1,4 +1,4 @@
-import 'package:aviz_application/constant/colors.dart';
+import 'package:aviz/constant/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -104,7 +104,7 @@ class ProfileScrean extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Text(
-                            "سید محمد جواد هاشمی",
+                            "مهدی رمضانی سرخونی",
                             style: TextStyle(
                               color: MyColors.grey700,
                               fontFamily: "sm",
@@ -137,7 +137,7 @@ class ProfileScrean extends StatelessWidget {
                                 width: 5,
                               ),
                               Text(
-                                "۰۹۱۱۷۵۴۰۱۴۵",
+                                "09011612090",
                                 style: TextStyle(
                                   color: MyColors.grey700,
                                   fontFamily: "sm",

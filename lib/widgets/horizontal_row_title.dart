@@ -1,4 +1,4 @@
-import 'package:aviz_application/constant/colors.dart';
+import 'package:aviz/constant/colors.dart';
 import 'package:flutter/material.dart';
 
 Widget HorizontalRowItemTitle({required String titile, required String image}) {

@@ -1,4 +1,4 @@
-# aviz_application
+# aviz
 
 A new Flutter project.
 

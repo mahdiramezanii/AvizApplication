@@ -1,6 +1,7 @@
-import 'package:aviz_application/Exception/api_exception.dart';
-import 'package:aviz_application/Features/Home/data/datasource/home_datasource.dart';
-import 'package:aviz_application/Features/Home/data/models/promotions_model.dart';
+
+import 'package:aviz/Exception/api_exception.dart';
+import 'package:aviz/Features/Home/data/datasource/home_datasource.dart';
+import 'package:aviz/Features/Home/data/models/promotions_model.dart';
 import 'package:dartz/dartz.dart';
 
 abstract class IHomeRepository {
