@@ -1,7 +1,7 @@
 
-import 'package:aviz_application/Features/search/bloc/search_event.dart';
-import 'package:aviz_application/Features/search/bloc/serch_state.dart';
-import 'package:aviz_application/Features/search/data/repository/serach_repository.dart';
+import 'package:aviz/Features/search/bloc/search_event.dart';
+import 'package:aviz/Features/search/bloc/serch_state.dart';
+import 'package:aviz/Features/search/data/repository/serach_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SerachBloc extends Bloc<SearchEvent,SerachState>{

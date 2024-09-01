@@ -1,12 +1,13 @@
-import 'package:aviz_application/Di/di.dart';
-import 'package:aviz_application/Features/Home/bloc/home_bloc.dart';
-import 'package:aviz_application/Features/Home/bloc/home_event.dart';
-import 'package:aviz_application/Features/search/bloc/search_bloc.dart';
-import 'package:aviz_application/constant/colors.dart';
-import 'package:aviz_application/Features/Home/screan/home_screan.dart';
-import 'package:aviz_application/screan/profile_screan.dart';
-import 'package:aviz_application/screan/register_aviz_screan.dart';
-import 'package:aviz_application/Features/search/screan/search_screan.dart';
+
+import 'package:aviz/Di/di.dart';
+import 'package:aviz/Features/Home/bloc/home_bloc.dart';
+import 'package:aviz/Features/Home/bloc/home_event.dart';
+import 'package:aviz/Features/Home/screan/home_screan.dart';
+import 'package:aviz/Features/search/bloc/search_bloc.dart';
+import 'package:aviz/Features/search/screan/search_screan.dart';
+import 'package:aviz/constant/colors.dart';
+import 'package:aviz/screan/profile_screan.dart';
+import 'package:aviz/screan/register_aviz_screan.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

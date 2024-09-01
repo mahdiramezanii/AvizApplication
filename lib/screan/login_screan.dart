@@ -1,5 +1,6 @@
-import 'package:aviz_application/constant/colors.dart';
-import 'package:aviz_application/screan/confirm_mobile_screan.dart';
+
+import 'package:aviz/constant/colors.dart';
+import 'package:aviz/screan/confirm_mobile_screan.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 

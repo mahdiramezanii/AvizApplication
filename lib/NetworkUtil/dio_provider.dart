@@ -1,4 +1,4 @@
-import 'package:aviz_application/constant/string_constant.dart';
+import 'package:aviz/constant/string_constant.dart';
 import 'package:dio/dio.dart';
 
 class DioPriovider {

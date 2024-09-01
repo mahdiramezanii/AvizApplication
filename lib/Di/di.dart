@@ -1,9 +1,10 @@
-import 'package:aviz_application/Features/Home/bloc/home_bloc.dart';
-import 'package:aviz_application/Features/Home/data/datasource/home_datasource.dart';
-import 'package:aviz_application/Features/Home/data/repository/home_repository.dart';
-import 'package:aviz_application/Features/search/data/datasource/search_datasorce.dart';
-import 'package:aviz_application/Features/search/data/repository/serach_repository.dart';
-import 'package:aviz_application/NetworkUtil/dio_provider.dart';
+
+import 'package:aviz/Features/Home/bloc/home_bloc.dart';
+import 'package:aviz/Features/Home/data/datasource/home_datasource.dart';
+import 'package:aviz/Features/Home/data/repository/home_repository.dart';
+import 'package:aviz/Features/search/data/datasource/search_datasorce.dart';
+import 'package:aviz/Features/search/data/repository/serach_repository.dart';
+import 'package:aviz/NetworkUtil/dio_provider.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 

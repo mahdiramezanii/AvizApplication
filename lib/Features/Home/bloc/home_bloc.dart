@@ -1,6 +1,7 @@
-import 'package:aviz_application/Features/Home/bloc/home_event.dart';
-import 'package:aviz_application/Features/Home/bloc/home_state.dart';
-import 'package:aviz_application/Features/Home/data/repository/home_repository.dart';
+
+import 'package:aviz/Features/Home/bloc/home_event.dart';
+import 'package:aviz/Features/Home/bloc/home_state.dart';
+import 'package:aviz/Features/Home/data/repository/home_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {

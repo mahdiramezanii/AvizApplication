@@ -1,5 +1,6 @@
-import 'package:aviz_application/constant/colors.dart';
-import 'package:aviz_application/widgets/horizontal_row_title.dart';
+
+import 'package:aviz/constant/colors.dart';
+import 'package:aviz/widgets/horizontal_row_title.dart';
 import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

@@ -1,5 +1,9 @@
-import 'package:aviz_application/Di/di.dart';
-import 'package:aviz_application/screan/botton_navigation_screan.dart';
+import 'package:aviz/Di/di.dart';
+import 'package:aviz/screan/botton_navigation_screan.dart';
+import 'package:aviz/screan/login_screan.dart';
+import 'package:aviz/screan/register_screan.dart';
+import 'package:aviz/screan/welocm_screan.dart';
+
 import 'package:flutter/material.dart';
 
 void main() async {
@@ -18,7 +22,7 @@ class MyApp extends StatelessWidget {
               outline: Colors.transparent,
             ),
       ),
-      home: BottonNavigationScrean(),
+      home: WelcomScrean(),
     );
   }
 }

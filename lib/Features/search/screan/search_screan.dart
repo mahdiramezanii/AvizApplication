@@ -1,11 +1,10 @@
-import 'package:aviz_application/Features/Home/bloc/home_bloc.dart';
-import 'package:aviz_application/Features/Home/data/models/promotions_model.dart';
-import 'package:aviz_application/Features/search/bloc/search_bloc.dart';
-import 'package:aviz_application/Features/search/bloc/search_event.dart';
-import 'package:aviz_application/Features/search/bloc/serch_state.dart';
-import 'package:aviz_application/constant/colors.dart';
-import 'package:aviz_application/widgets/app_bar.dart';
-import 'package:aviz_application/widgets/aviz.dart';
+
+import 'package:aviz/Features/search/bloc/search_bloc.dart';
+import 'package:aviz/Features/search/bloc/search_event.dart';
+import 'package:aviz/Features/search/bloc/serch_state.dart';
+import 'package:aviz/constant/colors.dart';
+import 'package:aviz/widgets/app_bar.dart';
+import 'package:aviz/widgets/aviz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

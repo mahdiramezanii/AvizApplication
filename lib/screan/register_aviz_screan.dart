@@ -1,8 +1,8 @@
-import 'package:aviz_application/constant/colors.dart';
-import 'package:aviz_application/screan/category_screan.dart';
-import 'package:aviz_application/screan/location_aviz_screan.dart';
-import 'package:aviz_application/widgets/app_bar.dart';
-import 'package:aviz_application/widgets/category_horizontal_widgets.dart';
+
+import 'package:aviz/constant/colors.dart';
+import 'package:aviz/screan/location_aviz_screan.dart';
+import 'package:aviz/widgets/app_bar.dart';
+import 'package:aviz/widgets/category_horizontal_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 

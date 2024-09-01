@@ -1,8 +1,14 @@
-import 'package:aviz_application/constant/colors.dart';
-import 'package:aviz_application/screan/login_screan.dart';
-import 'package:aviz_application/screan/register_screan.dart';
+
+import 'package:aviz/constant/colors.dart';
+import 'package:aviz/screan/login_screan.dart';
+import 'package:aviz/screan/register_screan.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+
+
+
+
 
 class WelcomScrean extends StatelessWidget {
   PageController _pageController = PageController();
